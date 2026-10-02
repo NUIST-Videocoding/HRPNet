@@ -1,0 +1,11 @@
+_BASE_: "../Base-RCNN-FPN.yaml"
+MODEL:
+  WEIGHTS: "/data/fmy/AB0/configs/stage2.pth"
+  MASK_ON: FALSE
+  RESNETS:
+    DEPTH: 101
+SOLVER:
+  BASE_LR: 0.0001
+  STEPS: (520000, 550000)
+  MAX_ITER: 600000
+
