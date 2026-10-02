@@ -680,3 +680,23 @@ Table 5 presents the cross-codec generalization results on images compressed by 
 ![Base model architecture](assets/base.png)
 
 **Figure 2.** Architecture of the Base model without semantic-prior guidance and SFSEM.
+
+## 7. Usage
+
+### Model Weights and Test Dataset
+
+Download the model weights and test dataset from [Baidu Netdisk](https://pan.baidu.com/s/1ZPjzWPeUMg2qo8NGq3Bedw?pwd=1895).
+
+**Extraction code:** `1895`
+
+### Evaluation
+
+Run the following command to evaluate the model on a single GPU. Replace `.../output_stage2/` with the actual directory containing the configuration file and model weights.
+
+```bash
+python tools/train_net.py \
+    --eval-only \
+    --num-gpus 1 \
+    --config-file .../output_stage2/config.yaml \
+    MODEL.WEIGHTS .../output_stage2/stage2.pth
+```
